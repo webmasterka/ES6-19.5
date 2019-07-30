@@ -1,0 +1,43 @@
+body {
+    background-color: #F0FFFF;
+    margin: 0 auto;
+    text-align: center;
+}
+
+input {
+    margin: 10px;
+    background-color: #fff;
+    color:  #4f5d73;
+    border: 2px solid #4f5d73;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+button {
+    padding: 10px;
+    background-color:  #4f5d73;
+    color:  #fff;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #fff;
+    color:  #4f5d73;
+}
+
+.contactItem {
+    background-color: #F5F5F5;
+    width: 400px;
+    margin: 20px;
+    padding: 20px 0;
+    margin: 20px auto;
+    border: 2px solid #4f5d73;
+    border-radius: 5px;
+    font-weight: bold;
+    -webkit-box-shadow: -12px 11px 20px -4px rgba(0,0,0,0.68);
+    -moz-box-shadow: -12px 11px 20px -4px rgba(0,0,0,0.68);
+    box-shadow: -12px 11px 20px -4px rgba(0,0,0,0.68);
+}
