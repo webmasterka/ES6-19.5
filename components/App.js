@@ -5,7 +5,7 @@ getGif: function (searchingText) {  // 1.
 
 		return fetch(url);
 
-		return new Promise(function (resolve, reject) {
+	/*	return new Promise(function (resolve, reject) {
 			const xhr = new XMLHttpRequest();  // 3.
 			xhr.open('GET', url);
 			xhr.onload = function () {
@@ -22,6 +22,7 @@ getGif: function (searchingText) {  // 1.
 			};
 			xhr.send();
 		})
+	*/	
 	},
 
 	handleSearch: function (searchingText) {  // 1.
@@ -40,8 +41,7 @@ getGif: function (searchingText) {  // 1.
 				};
 				return gif;
 			})
-
-			// tutaj mozna dodac caly kod z "onload" (20-31)			
+			
 			.then(gif => {  // 3.
 				this.setState({  // 4
 					loading: false,  // a
