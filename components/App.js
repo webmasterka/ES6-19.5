@@ -1,40 +1,27 @@
-App = React.createClass({
-	getInitialState() {
-		return {
-			loading: false,
-			searchingText: '',
-			gif: {}
-		};
-	},
-
-
-
-	getGif: function (searchingText) {  // 1.
+getGif: function (searchingText) {  // 1.
 		const GIPHY_API_URL = 'https://api.giphy.com';
 		const GIPHY_PUB_KEY = 'hwhFYYSAZaZFQaREf8tSB78oNchTFjYU';
 		const url = GIPHY_API_URL + '/v1/gifs/random?api_key=' + GIPHY_PUB_KEY + '&tag=' + searchingText;  // 2.
 
 		return fetch(url);
 
-		/*		return new Promise(function (resolve, reject) {
-					const xhr = new XMLHttpRequest();  // 3.
-					xhr.open('GET', url);
-					xhr.onload = function () {
-						if (xhr.status === 200) {
-							const data = JSON.parse(xhr.responseText).data; // 4.
-							const gif = {  // 5.
-								url: data.fixed_width_downsampled_url,
-								sourceUrl: data.url
-							};
-							resolve(gif);
-							return;
-							// 6.
-						}
-						reject({ error: 'no data' })
+		return new Promise(function (resolve, reject) {
+			const xhr = new XMLHttpRequest();  // 3.
+			xhr.open('GET', url);
+			xhr.onload = function () {
+				if (xhr.status === 200) {
+					const data = JSON.parse(xhr.responseText).data; // 4.
+					const gif = {  // 5.
+						url: data.fixed_width_downsampled_url,
+						sourceUrl: data.url
 					};
-					xhr.send();
-				})
-		*/
+					resolve(gif);
+					return;// 6.
+					}
+				reject({ error: 'no data' })
+			};
+			xhr.send();
+		});
 	},
 
 	handleSearch: function (searchingText) {  // 1.
