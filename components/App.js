@@ -21,7 +21,7 @@ getGif: function (searchingText) {  // 1.
 				reject({ error: 'no data' })
 			};
 			xhr.send();
-		});
+		})
 	},
 
 	handleSearch: function (searchingText) {  // 1.
